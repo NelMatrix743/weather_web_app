@@ -8,6 +8,28 @@ async function retrieveWeatherInfo(apiKey, cityName){
     document.querySelector(".temp").innerHTML = Math.round(jsonData.main.temp) + "°C";
     document.querySelector(".humidity").innerHTML = jsonData.main.humidity + '%';
     document.querySelector(".wind-speed").innerHTML = jsonData.wind.speed + " km/h";
+
+    let weatherImager = document.querySelector(".weather-imager");
+
+    switch(jsonData.weather[0].main){
+        case "Clouds":
+            weatherImager.src = "assets/images/clouds.png";
+            break;
+        case "Clear":
+            weatherImager.src = "assets/images/clear.png";
+            break;
+        case "Rain":
+            weatherImager.src = "assets/images/rain.png";
+            break;
+        case "Drizzle":
+            weatherImager.src = "assets/images/drizzle.png";
+            break;
+        case "Mist":
+            weatherImager.src = "assets/images/mist.png";
+            break;
+        default:
+            weatherImager.src = "assets/images/place_holder_2.png";
+    }
 }
 
 

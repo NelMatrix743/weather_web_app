@@ -30,6 +30,7 @@ async function retrieveWeatherInfo(apiKey, cityName){
         default:
             weatherImager.src = "assets/images/place_holder_2.png";
     }
+    document.querySelector(".weather-info").style.display = "block";
 }
 
 

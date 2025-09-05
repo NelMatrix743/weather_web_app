@@ -100,3 +100,7 @@ body {
 .humidity, .wind-speed {
     font-size: 28px;
 }
+
+.weather-info {
+    display: none;
+}

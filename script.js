@@ -33,12 +33,11 @@ async function retrieveWeatherInfo(apiKey, cityName){
     document.querySelector(".weather-info").style.display = "block";
 }
 
+const searchButton = document.querySelector(".search button");
+const cityNameInput = document.querySelector(".search input");
 
 // enter your API KEY here
 const API_KEY = "";
-
-const searchButton = document.querySelector(".search button");
-let cityNameInput = document.querySelector(".search input");
 
 // use utilities
 searchButton.addEventListener("click", () => {

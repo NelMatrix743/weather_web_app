@@ -43,3 +43,9 @@ const API_KEY = "";
 searchButton.addEventListener("click", () => {
     retrieveWeatherInfo(API_KEY, cityNameInput.value);
 });
+
+document.addEventListener("keydown", (event) => {
+    if(event.key == "Enter"){
+        retrieveWeatherInfo(API_KEY, cityNameInput.value);
+    }
+});

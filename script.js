@@ -2,6 +2,17 @@
 async function retrieveWeatherInfo(apiKey, cityName){
     const API_URL = `https://api.openweathermap.org/data/2.5/weather?units=metric&q=${cityName}&appid=${apiKey}`;
     const response = await fetch(API_URL);
+
+    if(response.status === 404){
+        if(document.querySelector(".weather-info").style.display == "block"){
+            document.querySelector(".weather-info").style.display = "none";
+        }
+        document.querySelector(".error").style.display = "block";
+        return;
+    } else {
+        document.querySelector(".error").style.display = "none";
+    }
+
     let jsonData = await response.json();
     //console.log(jsonData);
     document.querySelector(".city").innerHTML = jsonData.name;
